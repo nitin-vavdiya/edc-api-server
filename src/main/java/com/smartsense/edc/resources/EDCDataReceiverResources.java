@@ -20,14 +20,21 @@ public class EDCDataReceiverResources {
         this.objectMapper = objectMapper;
     }
 
-    @PostMapping("/consumer/data/webhook")
-    public String poc(@RequestBody  String data) throws IOException {
+    @PostMapping("/consumer/data/test")
+    public String consumerDataHook(@RequestBody  String data) throws IOException {
         System.out.println("DATA GET SUCCESSFULLY.."+data);
-        Map<String, Object> asset = objectMapper.readValue(data,Map.class);
-        Map<String, String> properties = (Map<String, String>) asset.get("properties");
-        String assetId = properties.get("asset:prop:id").toString();
-        assetData.put(assetId, asset);
+//        Map<String, Object> asset = objectMapper.readValue(data,Map.class);
+//        Map<String, String> properties = (Map<String, String>) asset.get("properties");
+//        String assetId = properties.get("asset:prop:id").toString();
+//        assetData.put(assetId, asset);
         return "Got it!";
+    }
+
+    @GetMapping("/provider/data/webhook")
+    public String providerDataHook() throws IOException {
+        System.out.println("READ DATA FROM PROVIDER..");
+        String data = objectMapper.writeValueAsString(Map.of("name", "dilip", "surname", "dhankecha"));
+        return data;
     }
 
     @GetMapping("asset/{assetId}")
