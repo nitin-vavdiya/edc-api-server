@@ -1,0 +1,48 @@
+{
+  "connectorId": "provider",
+  "connectorAddress": "http://localhost:8282/api/v1/ids/data",
+  "protocol": "ids-multipart",
+  "offer": {
+    "offerId": "a6a25c6d-a98b-4e10-a8df-b5bcd937cd8f:654330ee-6ada-4a27-add4-dff83d70404c",
+    "assetId": "2",
+    "policy": {
+      "uid": "433dc975-c4bc-450a-acdc-5e735756c152",
+      "permissions": [
+        {
+          "edctype": "dataspaceconnector:permission",
+          "uid": null,
+          "target": "2",
+          "action": {
+            "type": "USE",
+            "includedIn": null,
+            "constraint": null
+          },
+          "assignee": null,
+          "assigner": null,
+          "constraints": [],
+          "duties": []
+        }
+      ],
+      "prohibitions": [],
+      "obligations": [],
+      "extensibleProperties": {},
+      "inheritsFrom": null,
+      "assigner": null,
+      "assignee": null,
+      "target": null,
+      "@type": {
+        "@policytype": "set"
+      }
+    },
+    "asset": {
+      "properties": {
+        "code": "56059966",
+        "ids:byteSize": null,
+        "provider": "ZF",
+        "name": "Gear box",
+        "asset:prop:id": "2",
+        "ids:fileName": null
+      }
+    }
+  }
+}

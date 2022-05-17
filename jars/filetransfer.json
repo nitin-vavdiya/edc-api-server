@@ -1,0 +1,20 @@
+{
+  "protocol": "ids-multipart",
+  "assetId": "2",
+  "contractId": "a6a25c6d-a98b-4e10-a8df-b5bcd937cd8f:456bca70-ac71-4982-bd76-80d128b101ca",
+  "dataDestination": {
+    "properties": {
+      "endpoint": "http://localhost:8187/consumer/data",
+      "method": "POST",
+      "mediaType": "application/json",
+      "type": "HttpData"
+    }
+  },
+  "transferType": {
+    "contentType": "text/plain",
+    "isFinite": true
+  },
+  "managedResources": false,
+  "connectorAddress": "http://localhost:8282/api/v1/ids/data",
+  "connectorId": "consumer"
+}
