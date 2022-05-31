@@ -1,0 +1,20 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  api-server:
+    build: ./api-server/.
+    ports:
+      - "8187:8187"
+  consumer:
+    build: ./consumer/.
+    ports:
+      - "9191:9191"
+      - "9192:9192"
+      - "9292:9292"
+  producer:
+    build: ./producer/.
+    ports:
+      - "8181:8181"
+      - "8182:8182"
+      - "8282:8282"
+volumes:
+  logvolume01: {}
