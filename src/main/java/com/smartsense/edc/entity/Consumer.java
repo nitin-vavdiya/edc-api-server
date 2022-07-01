@@ -6,6 +6,13 @@ import javax.persistence.*;
 @Table(name = "consumer")
 public class Consumer {
 
+    public static Consumer of(String assetId,String data){
+        Consumer consumer = new Consumer();
+        consumer.setAssetId(assetId);
+        consumer.setData(data);
+        return consumer;
+    }
+
     @Id
     @Column(name = "asset_id")
     private String assetId;

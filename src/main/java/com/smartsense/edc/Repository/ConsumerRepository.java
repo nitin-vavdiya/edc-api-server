@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ConsumerRepository extends JpaRepository<Consumer, String> {
+
+    Consumer getByAssetId(String assetId);
 }

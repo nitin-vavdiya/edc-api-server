@@ -5,6 +5,7 @@ import com.smartsense.edc.Repository.ConsumerRepository;
 import com.smartsense.edc.Repository.ProviderRepository;
 import com.smartsense.edc.entity.Consumer;
 import com.smartsense.edc.entity.Provider;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -69,10 +70,10 @@ public class EDCDataReceiverResources {
 
     @GetMapping("asset/{assetId}")
     public ResponseEntity<Object> getAssetData(@PathVariable("assetId") String assetId){
-        if(consumerAssetData.containsKey(assetId)){
-            return ResponseEntity.status(HttpStatus.OK).body(assetData.get(assetId));
-        }else{
-            return ResponseEntity.status(HttpStatus.OK).body(new HashMap<>());
+        Consumer consumerData = consumerRepository.getByAssetId(assetId);
+        if (consumerData==null){
+            return ResponseEntity.status(HttpStatus.OK).body(Consumer.of(assetId,"{'Data','Not available.'}"));
         }
+        return ResponseEntity.status(HttpStatus.OK).body(consumerData);
     }
 }
